@@ -1,0 +1,27 @@
+
+defaults:
+  - _self_
+  - model: base
+  - dataset: base
+  - training/loss : base
+  - training/optimizer: base
+  - training/trainer : base
+
+global_setting:
+  project_name: AiProjectTemplate
+  device: cpu # or cuda
+  seed: 42
+  num_epochs: 2
+
+logger:
+  name : "basic logger"
+  level: "INFO"
+  handlers:
+    - type: "console"
+      level: "DEBUG"
+    - type: "file"
+      filename: "logs/app.log"
+      level: "INFO"
+
+  format: "{time} {level} {message}"
+  datefmt: "%Y-%m-%d %H:%M:%S"
